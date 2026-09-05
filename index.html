@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Gödel spacetime (1949)</title>
+    <meta
+      name="description"
+      content="Interactive educational visualization of Gödel spacetime: tipping light cones, co-rotating dust, and a closed timelike curve."
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="viewport"></canvas>
+      <div id="labels"></div>
+
+      <header class="chrome title-bar">
+        <h1>Gödel spacetime <span>(1949)</span></h1>
+        <p>Rotating-dust universe · illustrative causal structure</p>
+      </header>
+
+      <aside class="chrome legend" aria-label="Scene legend">
+        <button
+          type="button"
+          class="legend-toggle"
+          aria-expanded="true"
+          aria-controls="legend-body"
+        >
+          Legend
+        </button>
+        <div id="legend-body">
+          <ul class="swatches">
+            <li>
+              <span class="swatch cone-blue"></span>
+              Blue cones: <em>r &lt; r<sub>crit</sub></em>, ordinary causal
+            </li>
+            <li>
+              <span class="swatch cone-orange"></span>
+              Orange cones: <em>r ≥ r<sub>crit</sub></em>, φ can be timelike
+            </li>
+            <li>
+              <span class="swatch ctc"></span>
+              Pink ring: closed timelike curve
+            </li>
+            <li>
+              <span class="swatch worldline"></span>
+              Green helix: ordinary near-axis worldline
+            </li>
+            <li>
+              <span class="swatch dust"></span>
+              Tan helices: co-rotating dust
+            </li>
+            <li>
+              <span class="swatch crit"></span>
+              Gold ring: critical radius ≈ 2
+            </li>
+          </ul>
+          <p class="hint">
+            <strong>Orbit</strong> drag · <strong>Zoom</strong> scroll / pinch ·
+            <strong>Pan</strong> right-drag / two-finger
+          </p>
+          <p class="note">
+            Tip angle uses θ ≈ (π/2)(1 − e<sup>−r/r<sub>crit</sub></sup>). This
+            is an educational picture, not a numerical geodesic solver.
+          </p>
+          <button type="button" id="reset-view">Reset view</button>
+        </div>
+      </aside>
+
+      <div id="fallback" hidden>
+        <p>
+          This visualization needs WebGL. Try a current browser, or open the
+          page over http (not <code>file://</code>).
+        </p>
+      </div>
+    </div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
