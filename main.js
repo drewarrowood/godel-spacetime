@@ -24,15 +24,19 @@ function showFallback() {
   fallback.hidden = false;
 }
 
-const renderer = new THREE.WebGLRenderer({
-  canvas,
-  antialias: true,
-  alpha: false,
-  powerPreference: "high-performance",
-});
-
-if (!renderer.capabilities.isWebGL2 && !renderer.getContext()) {
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({
+    canvas,
+    antialias: true,
+    alpha: false,
+    powerPreference: "high-performance",
+    failIfMajorPerformanceCaveat: false,
+  });
+} catch (err) {
+  console.error(err);
   showFallback();
+  throw err;
 }
 
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
