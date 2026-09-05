@@ -31,16 +31,9 @@ Any other static server works (`npx serve`, VS Code Live Server, etc.).
 
 ## GitHub Pages
 
-The viewer is static files at the repository root (`index.html`, `main.js`, `style.css`, `.nojekyll`). Project Pages should serve them at `/godel-spacetime/`.
+Live at [https://drewarrowood.github.io/godel-spacetime/](https://drewarrowood.github.io/godel-spacetime/).
 
-GitHub does not allow Actions or app tokens to create a Pages site the first time. If the live URL 404s, the repository owner needs one Settings change (about 30 seconds):
-
-1. Open [Settings → Pages](https://github.com/drewarrowood/godel-spacetime/settings/pages)
-2. **Build and deployment → Source:** Deploy from a branch
-3. **Branch:** `main` · **Folder:** `/ (root)`
-4. Save
-
-The site is then `https://drewarrowood.github.io/godel-spacetime/`. First publish can take a minute.
+The viewer is static files at the repository root (`index.html`, `main.js`, `style.css`, `.nojekyll`). Pages is set to **Deploy from a branch**: `main` / `/ (root)`.
 
 ## Attribution
 
