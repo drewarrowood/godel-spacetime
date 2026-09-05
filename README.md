@@ -29,6 +29,19 @@ Any other static server works (`npx serve`, VS Code Live Server, etc.).
 - **Pan:** right-drag or two-finger drag
 - **Reset view:** button in the on-page legend
 
+## GitHub Pages
+
+The viewer is static files at the repository root (`index.html`, `main.js`, `style.css`, `.nojekyll`). Project Pages should serve them at `/godel-spacetime/`.
+
+GitHub does not allow Actions or app tokens to create a Pages site the first time. If the live URL 404s, the repository owner needs one Settings change (about 30 seconds):
+
+1. Open [Settings → Pages](https://github.com/drewarrowood/godel-spacetime/settings/pages)
+2. **Build and deployment → Source:** Deploy from a branch
+3. **Branch:** `main` · **Folder:** `/ (root)`
+4. Save
+
+The site is then `https://drewarrowood.github.io/godel-spacetime/`. First publish can take a minute.
+
 ## Attribution
 
 Visualization of the causal picture associated with the Gödel metric (Gödel, 1949). Geometry, colors, and the tip/CTC layout are illustrative for teaching; they do not solve the geodesic equation or claim coordinate-invariant numerical accuracy.
